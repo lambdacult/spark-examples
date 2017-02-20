@@ -6,7 +6,7 @@ To get started, run:
 * `mvn clean install`
 * `serverless deploy`
 * assign alias `lambdaspark-1` to the newly created version 1
-* `mvn clean install`
+* `mvn clean install` (.jar file needs to change, otherwise AWS won't accept a new version)
 * `serverless deploy`
 * assign alias `lambdaspark-2` and `lambdaspark-current` to the newly created version 2
 

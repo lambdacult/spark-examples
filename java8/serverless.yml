@@ -20,6 +20,7 @@ service: lambdacult-spark-example-java8 # NOTE: update this with your service na
 provider:
   name: aws
   runtime: java8
+  timeout: 60
 
 # you can overwrite defaults here
 #  stage: dev
