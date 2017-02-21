@@ -26,7 +26,7 @@ const buildResponseBody = function(event, context, responseCallback) {
 };
 
 module.exports.handleRequest = (event, context, callback) => {
-  console.log("received", event);
+  console.log('received', event);
   buildResponseBody(event, context, function(responseBody) {
     const response = {
       statusCode: 200,
