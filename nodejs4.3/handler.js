@@ -28,10 +28,11 @@ const buildResponseBody = function(event, context, responseCallback) {
 module.exports.handleRequest = (event, context, callback) => {
   console.log('received', event);
   buildResponseBody(event, context, function(responseBody) {
-    const response = {
-      statusCode: 200,
-      body: JSON.stringify(responseBody),
-    };
-    callback(null, response);
+    callback(null, responseBody);
+    // Or as lambda-proxy response for API Gateway:
+    // callback(null, {
+    //   statusCode: 200,
+    //   body: JSON.stringify(responseBody),
+    // });
   });
 };

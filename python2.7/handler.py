@@ -26,7 +26,9 @@ def build_response_body(event, context):
 
 def handle_request(event, context):
     logger.info('received {}'.format(event))
-    return {
-        "statusCode": 200,
-        "body": json.dumps(build_response_body(event, context))
-    }
+    return build_response_body(event, context)
+    # Or as lambda-proxy response for API Gateway:
+    # return {
+    #     "statusCode": 200,
+    #     "body": json.dumps(build_response_body(event, context))
+    # }
