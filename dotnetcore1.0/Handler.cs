@@ -26,8 +26,7 @@ namespace AwsDotnetCsharp
                 Log("sleeping for " + minimumDurationMilliseconds + "ms");
                 Thread.Sleep(minimumDurationMilliseconds);
                 Log("sleeping done");
-                return new WarmupResponse(File.ReadAllText("/proc/uptime"),
-                    File.ReadAllText("/proc/sys/kernel/random/boot_id"), context.LogStreamName);
+                return new WarmupResponse(File.ReadAllText("/proc/uptime"), context.LogStreamName);
             }
             return new Response("Go Serverless v1.0! Your function executed successfully!", request);
         }
@@ -55,16 +54,12 @@ namespace AwsDotnetCsharp
         [JsonProperty("uptime")]
         public string Uptime { get; }
 
-        [JsonProperty("bootId")]
-        public string BootId { get; }
-
         [JsonProperty("logStreamName")]
         public string LogStreamName { get; }
 
-        public WarmupResponse(string uptime, string bootId, string logStreamName)
+        public WarmupResponse(string uptime, string logStreamName)
         {
             Uptime = uptime;
-            BootId = bootId;
             LogStreamName = logStreamName;
         }
     }

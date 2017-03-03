@@ -5,9 +5,6 @@ import time
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-def read_file_to_string(path):
-    return open(path, 'r').read()
-
 def build_response_body(event, context):
     if event['action'] == 'warmup':
         minimum_duration_milliseconds = event['minimumDurationMilliseconds']
@@ -15,8 +12,7 @@ def build_response_body(event, context):
         time.sleep(minimum_duration_milliseconds / 1000.0)
         logger.info('sleeping done')
         return {
-            "uptime": read_file_to_string('/proc/uptime'),
-            "bootId": read_file_to_string('/proc/sys/kernel/random/boot_id'),
+            "uptime": open('/proc/uptime', 'r').read(),
             "logStreamName": context.log_stream_name
         }
     return {

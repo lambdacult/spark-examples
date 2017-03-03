@@ -2,18 +2,13 @@
 
 const fs = require('fs');
 
-const readFileToString = function(path) {
-  return fs.readFileSync(path, { encoding: 'utf-8' })
-};
-
 const buildResponseBody = function(event, context, responseCallback) {
   if (event.action === 'warmup') {
     console.log('sleeping for ' + event.minimumDurationMilliseconds + 'ms');
     setTimeout(function() {
       console.log('sleeping done');
       responseCallback({
-        uptime: readFileToString('/proc/uptime'),
-        bootId: readFileToString('/proc/sys/kernel/random/boot_id'),
+        uptime: fs.readFileSync('/proc/uptime', { encoding: 'utf-8' }),
         logStreamName: context.logStreamName
       });
     }, event.minimumDurationMilliseconds);
