@@ -10,7 +10,7 @@ To get started, run:
 * `serverless deploy`
 * assign alias `lambdaspark-2` and `lambdaspark-current` to the newly created version 2
 
-To configure the newly created lambda as a spλrk, use the following warmup input:
+To configure the newly created lambda function with [Spark](https://lambdacult.com/spark), use the following warmup input:
 ```
 {
   "action": "warmup",

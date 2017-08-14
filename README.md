@@ -1,4 +1,4 @@
-These examples are templates to get started with [lambdacult spλrk](https://lambdacult.com/spark).
+These examples are templates to get started with [Lambdacult Spark](https://lambdacult.com/spark).
 
 More details in the subdirectories for the respective runtimes:
 * [C#](dotnetcore1.0)
