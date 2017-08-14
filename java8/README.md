@@ -5,10 +5,10 @@ To get started, run:
 * `cd java8`
 * `mvn clean install`
 * `serverless deploy`
-* assign alias `lambdaspark-1` to the newly created version 1
+* assign alias `spark-1` to the newly created version 1
 * `mvn clean install` (.jar file needs to change, otherwise AWS won't accept a new version)
 * `serverless deploy`
-* assign alias `lambdaspark-2` and `lambdaspark-current` to the newly created version 2
+* assign alias `spark-2` and `spark-current` to the newly created version 2
 
 To configure the newly created lambda function with [Spark](https://lambdacult.com/spark), use the following warmup input:
 ```
